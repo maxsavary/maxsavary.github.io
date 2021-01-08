@@ -13230,7 +13230,7 @@ $$E(\mathbf{w},\mathbf{b}) = \frac{1}{m}\sum\limits_{t=1}^{m}E(\mathbf{w},\mathb
 $$E(\mathbf{w},\mathbf{b})_{t}=\frac{1}{2}\left\|y^{(t)}-h_{\mathbf{w},\mathbf{b}}(x^{(t)})\right\|^{2}_{2} \qquad \qquad (COSTt)$$<h3 id="Gradient-Descent">Gradient Descent<a class="anchor-link" href="#Gradient-Descent">&#182;</a></h3><p>Minimizing $E$ is therefore minimizing the error for each training data $(COSTt)$ then taking the average for all the data</p>
 <p>We can see that $(COSTt)$ depends on weights $w^{(l)}_{jk}$, bias $b^{(l)}_{j}$ and values of activation functions $a^{(l)}_{j}$ calculated for each Node. But we can only "play" with the weights and the bias</p>
 <p><em>This cost function can be used for both classification and regression problem. For Classification $y \in \{0,1\}$ the output is calculated by the Sigmoid function giving a distributuon in $[0,1]$. For a regression problem $y \in [0,1]$</em></p>
-<p>The Cost Function $(COST)$ can be minimized (regarding $\mathbf{w}$ and $\mathbf{b}$) by the Gradient Descent Method <a href="./ml-introduction-suplearn-reg.ipynb#Gradient-Descent">Gradient Descent</a>.</p>
+<p>The Cost Function $(COST)$ can be minimized (regarding $\mathbf{w}$ and $\mathbf{b}$) by the Gradient Descent Method <a href="./ml-introduction-suplearn-reg.html#Gradient-Descent">Gradient Descent</a>.</p>
 <p>Minimizing is to "get down" in the opposite direction of the gradient which gives for each point the direction and the value of the greatest slope.</p>
 <p>The figure below illustrates a Cost Function $E$ depending on 2 weights $w_{1}$ and $w_{2}$</p>
 <ul>
@@ -13238,7 +13238,7 @@ $$E(\mathbf{w},\mathbf{b})_{t}=\frac{1}{2}\left\|y^{(t)}-h_{\mathbf{w},\mathbf{b
 <li>On the right a projection of the level lines and the gradient fields at each point. The gradient at a point is perpendicular to the level line</li>
 </ul>
 <p><img src="./images/deep-ML-CostPlot.png" alt="image"></p>
-<p>But unlike what is done here <a href="./ml-introduction-suplearn-reg.ipynb#Gradient-Descent">Gradient Descent</a> there are Hidden Layers whose output and input values are not known. We only have the $\{(x^{(i)},y^{(i)})\}$ of the first and last Layer. We have to find the minimum of $(COST)$ regarding the weights $w^{(l)}_{jk}$ and $b^{(l)}_{j}$ going downhill "<strong><em>in the fog</em></strong>". We cannot modify the activation values, we can only play on the weights and bias !!!</p>
+<p>But unlike what is done here <a href="./ml-introduction-suplearn-reg.html#Gradient-Descent">Gradient Descent</a> there are Hidden Layers whose output and input values are not known. We only have the $\{(x^{(i)},y^{(i)})\}$ of the first and last Layer. We have to find the minimum of $(COST)$ regarding the weights $w^{(l)}_{jk}$ and $b^{(l)}_{j}$ going downhill "<strong><em>in the fog</em></strong>". We cannot modify the activation values, we can only play on the weights and bias !!!</p>
 <p>We will therefore make a descent by calculating the gradients of $E(\mathbf{w},\mathbf{b})_{t}$ relativaly to $w$ and $b$ for each Layer $l$. Derivative calculations will allow us to see the influence that a disturbance of a given weight/bias has on the error, and therefore to be able to adjust. This is the <strong>backpropagation</strong> algoritm one of the creators is <strong>Yann Le Cun</strong></p>
 <p>$s_{l}$ being the Layer $l$ number of Nodes (without bias)</p>
 <p><br></p>
