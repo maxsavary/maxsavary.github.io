@@ -13154,7 +13154,7 @@ $$<p>For example, we want to find a model allowing to calculate the price of a h
 <h2 id="Cost-Function">Cost Function<a class="anchor-link" href="#Cost-Function">&#182;</a></h2><p>The ML cost function is what will measure the error between the set of values calculated by the model and the expected values.</p>
 <p>In regression we will express it by leaning on the formalization of the "least squares" method : <a href="https://en.wikipedia.org/wiki/Least_squares">https://en.wikipedia.org/wiki/Least_squares</a></p>
 <p>So we have a Cost Funtion $J$ such as :</p>
-$$J( \theta ) =\frac{1}{2m}\sum ^{m}_{i=1}( h_{\theta}\left( x^{( i)}) -y^{( i)}\right)^{2} \qquad \qquad (1.1)$$<p>Or in Matrix notation :</p>
+$$J( \theta ) =\frac{1}{2m}\sum ^{m}_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})^{2} \qquad \qquad (1.1)$$<p>Or in Matrix notation :</p>
 $$J( \theta ) =\frac{1}{2m}( X\theta -Y)^{T}( X\theta -Y)$$<p>$\left( x^{( i)} ,y^{( i)}\right)$ being the "training set" and $x_{0} =( 1,\ ...\ ,1)^{T}$</p>
 <p>Finding the best model is therefore finding the best parameters $( \theta _{0} ,\ ...,\theta _{n})$ minimizing $J$.</p>
 <p>For this we will use the <strong>gradient descent</strong> which is a classical optimization method more efficient than the standard method of least squares especially in the case where we have a large-dimensional space of variables (input) and if we have many examples in the <strong>training set</strong>. Moreover, this method is more general because it can be applied for other formulations of the cost function (other standards, $h$ nonlinear)</p>
@@ -13163,7 +13163,7 @@ $$\underset{\theta }{min} \ J( \theta ) \ =\ \underset{\theta _{0} ,\ ...\ ,\the
 <p>We have to calculate</p>
 $$\nabla J( \theta ) \ =\left(\frac{\partial }{\partial \theta _{0}} J( \theta ) ,\ ...\ ,\frac{\partial }{\partial \theta _{n}} J( \theta )\right)$$<p></p>
 <p>which for $(1.1)$ gives</p>
-$$\frac{\partial }{\partial \theta_{j}} J(\theta )=\sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})x_j^{(i)}$$<p>In the linear case $J(\theta)$ is a convex function, so the minimum is unique. We are sure to find the best $\theta$. This is not the case for a non-convex cost function (nonlinear case =&gt; cost function associated with neural networks)</p>
+$$\frac{\partial }{\partial \theta_{j}} J(\theta )=\frac{1}{m} \sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})x_j^{(i)}$$<p>In the linear case $J(\theta)$ is a convex function, so the minimum is unique. We are sure to find the best $\theta$. This is not the case for a non-convex cost function (nonlinear case =&gt; cost function associated with neural networks)</p>
 <p><img src="./images/ML-regression-001.PNG" alt="image"></p>
 <p><strong>Gradient Descent Algorithm</strong> :</p>
 <ol>
@@ -13419,7 +13419,7 @@ $$J(\theta_{0},\theta_{1})=\frac{1}{2}\sum_{i=1}^m(\theta_{0}+\theta_{1}x^{(i)}-
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Gradient Descent: 544718.88, 224945.15
+<pre>Gradient Descent: 544718.87, 224945.15
 </pre>
 </div>
 </div>
